@@ -1,0 +1,117 @@
+{
+  "model": "RandomForestRegressor",
+  "n_estimators": 100,
+  "trained_rows": 20000,
+  "test_rows": 4000,
+  "train_seconds": 1.5,
+  "sklearn_version": "1.9.1",
+  "metrics_holdout": {
+    "r2": 0.9286,
+    "mae": 3.846,
+    "rmse": 5.056
+  },
+  "model_comparison": {
+    "Random Forest (used)": {
+      "r2": 0.9286,
+      "mae": 3.846,
+      "rmse": 5.056
+    },
+    "Gradient Boosting": {
+      "r2": 0.9665,
+      "mae": 2.685,
+      "rmse": 3.462
+    },
+    "Linear (Ridge) baseline": {
+      "r2": 0.8478,
+      "mae": 5.766,
+      "rmse": 7.381
+    }
+  },
+  "feature_importance": {
+    "traffic_density": 0.03138,
+    "accident_frequency": 0.1295,
+    "street_lighting": 0.02487,
+    "pedestrian_density": 0.00974,
+    "road_condition": 0.02373,
+    "crime_rate": 0.0143,
+    "rainfall": 0.00545,
+    "visibility": 0.09592,
+    "intersection_density": 0.0167,
+    "vehicle_density": 0.03752,
+    "time_of_day": 0.01388,
+    "day_of_week": 0.0017,
+    "distance": 0.00365,
+    "route_duration": 0.00626,
+    "weather_condition": 0.00313,
+    "road_type": 0.01148,
+    "traveler_type": 0.12071,
+    "travel_mode": 0.45007
+  },
+  "permutation_importance": {
+    "traffic_density": 0.01831,
+    "accident_frequency": 0.10188,
+    "street_lighting": 0.01736,
+    "pedestrian_density": 0.00534,
+    "road_condition": 0.0184,
+    "crime_rate": 0.00635,
+    "rainfall": 0.00258,
+    "visibility": 0.09947,
+    "intersection_density": 0.01116,
+    "vehicle_density": 0.01832,
+    "time_of_day": 0.00986,
+    "day_of_week": 7e-05,
+    "distance": 0.00076,
+    "route_duration": 0.00147,
+    "weather_condition": 0.00203,
+    "road_type": 0.00623,
+    "traveler_type": 0.13839,
+    "travel_mode": 0.54202
+  },
+  "references": {
+    "numeric_mean": {
+      "traffic_density": 39.301,
+      "accident_frequency": 3.51,
+      "street_lighting": 64.802,
+      "pedestrian_density": 28.121,
+      "road_condition": 61.991,
+      "crime_rate": 33.654,
+      "rainfall": 1.367,
+      "visibility": 7.076,
+      "intersection_density": 8.851,
+      "vehicle_density": 36.923,
+      "time_of_day": 12.097,
+      "day_of_week": 3.005,
+      "distance": 3.467,
+      "route_duration": 21.63
+    },
+    "categorical_mode": {
+      "weather_condition": "clear",
+      "road_type": "residential",
+      "traveler_type": "senior_citizen",
+      "travel_mode": "public_transport"
+    },
+    "by_mode_median": {
+      "walking": {
+        "distance": 2.744,
+        "route_duration": 34.3
+      },
+      "cycling": {
+        "distance": 2.761,
+        "route_duration": 11.834
+      },
+      "public_transport": {
+        "distance": 2.748,
+        "route_duration": 16.378
+      },
+      "car": {
+        "distance": 2.669,
+        "route_duration": 6.811
+      }
+    }
+  },
+  "thresholds": {
+    "low_risk_min": 70,
+    "high_risk_max": 40
+  },
+  "data_note": "Synthetic demo data. Scores are NOT real-world safety measurements."
+}
