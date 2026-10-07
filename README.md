@@ -4,7 +4,7 @@
 
 > The shortest route isn't always the safest route.
 
-Final-year project. Supports **SDG 11 (Sustainable Cities and Communities, Target 11.2)** and, secondarily, **SDG 3 (Good Health and Well-Being)**.
+Supports **SDG 11 (Sustainable Cities and Communities, Target 11.2)** and, secondarily, **SDG 3 (Good Health and Well-Being)**.
 
 > **Important:** the data in this project is **synthetic** and the routes are a **demo simulation**. Scores are *predicted safety scores based on available historical and contextual factors* in that synthetic data. This system provides decision support and should not be treated as a guarantee of real-world safety.
 
@@ -130,23 +130,11 @@ To switch provider, change `LLM_BASE_URL`, `LLM_MODEL` and `LLM_API_KEY`. `.env.
 
 **Backend on Render**
 
-1. Push this repository to GitHub (`.env` is git-ignored).
-2. In Render choose **New > Blueprint** (uses `render.yaml`) or **New > Web Service** with build command `pip install -r backend/requirements.txt && python -m ml.train_model` and start command `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`, plan **Free**.
-3. Add `LLM_API_KEY` in the service's Environment settings (optional).
-4. Copy the service URL, for example `https://saferoute-ai-backend.onrender.com`.
-
-Free Render services sleep after a period of inactivity, so the first request after a pause can take about a minute. The app shows a message and retries are safe.
+https://saferoute-ai-ltzg.onrender.com
 
 **Frontend on Streamlit Community Cloud**
 
-1. Create a new app from the same repository with main file path `frontend/app.py`.
-2. In **Advanced settings > Secrets** add:
-   ```toml
-   BACKEND_URL = "https://your-backend-url.onrender.com"
-   ```
-3. Deploy. The frontend installs from `frontend/requirements.txt` (no ML libraries needed there).
-
-A Docker image for the backend is also provided (`docker build -t saferoute . && docker run -p 8000:8000 saferoute`).
+https://saferoute-ai-parimal.streamlit.app/
 
 ## Limitations
 
